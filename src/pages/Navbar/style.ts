@@ -6,6 +6,7 @@ export const Navbar = styled.nav`
   background-color: blueviolet;
   height: 100vh;
   width: 10%;
+  position: fixed;
 `;
 
 export const Title = styled.h1`
