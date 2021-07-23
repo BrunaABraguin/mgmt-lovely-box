@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from '../Navigation';
+import Navbar from '../Navbar';
 import axios from 'axios';
 import * as S from './style';
 
@@ -18,10 +18,10 @@ export const Users = () => {
     }
 
     return (
-        <S.UserPage>
-            <Navigation />
+        <S.Container>
+            <Navbar />
             <button onClick={handleUsers}>Press me</button>           
             <h1>Users</h1>
-        </S.UserPage>
+        </S.Container>
     )
 }

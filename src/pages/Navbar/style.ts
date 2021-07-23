@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Navigation = styled.section`
+export const Navbar = styled.nav`
   padding: 20px;
   margin-bottom: 20px;
   background-color: blueviolet;
@@ -8,7 +8,7 @@ export const Navigation = styled.section`
   width: 10%;
 `;
 
-export const NavigationTitle = styled.h1`
+export const Title = styled.h1`
   font-size: 2.5em;
   font-weight: bold;
   margin-bottom: 10px;
@@ -27,6 +27,6 @@ export const LinkTitle = styled.span`
   cursor: pointer;
 `;
 
-export const NavigationIcon = styled.i`
+export const Icon = styled.i`
   font-size: 1.75em;
 `; 

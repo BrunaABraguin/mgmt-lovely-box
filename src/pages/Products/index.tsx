@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import Navigation from '../Navigation';
+import Navbar from '../Navbar';
+import * as S from './style';
 
 export const Product = () => {
     const handleProducts = () => {
@@ -16,10 +17,10 @@ export const Product = () => {
     } 
 
     return (
-        <>
-            <Navigation />            
+        <S.Container>
+            <Navbar />            
             <h1>Products</h1>
             <button onClick={handleProducts}>Press me</button>    
-        </>
+        </S.Container>
     )
 }

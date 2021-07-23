@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const UserPage = styled.section`
+export const Container = styled.section`
     display: flex;
 `;
