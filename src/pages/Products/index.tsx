@@ -13,7 +13,7 @@ interface Product {
 export const Products = () => {
     const [products, setProducts] = useState<Product[]>([]);
     useEffect(() => { 
-        axios.get('https://fakestoreapi.com/products')
+        axios.get('http://localhost:8080/products')
         .then(response => {
             setProducts(response.data);
         })
@@ -26,8 +26,8 @@ export const Products = () => {
         <S.Container>
             <Navbar />
             <S.Row>
-            { products.map(product => (  
-                <div>
+            { products.map((product, index) => (  
+                <div key={index}>
                     <h1>{ product.id }</h1>       
                     <h1>{ product.title }</h1>
                     <p>{ product.price }</p>

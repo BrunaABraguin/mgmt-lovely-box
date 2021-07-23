@@ -17,7 +17,7 @@ interface User {
 export const Users = () => {
     const [users, setUsers] = useState<User[]>([]);
     useEffect(() => {
-        axios.get('https://fakestoreapi.com/users')
+        axios.get('http://localhost:8080/users')
         .then(response => {
             setUsers(response.data);
         })
@@ -30,8 +30,8 @@ export const Users = () => {
         <S.Container>
             <Navbar />       
             <S.Row>
-                {users.map(user => (
-                    <div>
+                {users.map((user, index) => (
+                    <div key={index}>
                     <h1>{ user.id }</h1>       
                     <h1>{ user.username }</h1>
                     <p>{ user.name.firstname } { user.name.lastname }</p>
