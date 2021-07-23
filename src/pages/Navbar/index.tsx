@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Navbar: React.FC = () => {
   return (
   <S.Navbar>
-    <S.Title>LB</S.Title>    
+    <S.Title><Link to="/">LB</Link></S.Title>    
       <Link to="/">
         <S.LinkTitle><S.Icon className="bi bi-basket-fill"></S.Icon>
           Produtos

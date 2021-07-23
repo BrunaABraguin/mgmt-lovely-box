@@ -24,7 +24,7 @@ export const Users = () => {
         .catch(error => {
             console.log(error);
         });
-    });
+    }, []);
 
     return (
         <S.Container>

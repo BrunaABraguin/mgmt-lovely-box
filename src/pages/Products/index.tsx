@@ -20,7 +20,7 @@ export const Products = () => {
         .catch(error => {
             console.log(error);
         });
-    });
+    }, []);
 
     return (
         <S.Container>
