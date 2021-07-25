@@ -1,6 +1,7 @@
 # MGMT Lovely Box
 
 Gerenciamento e-commerce de Produtos e Clientes da loja Lovely Box.
+[Live Application](https://mgmt-lovely-box.netlify.app/)
 
 ## Instalação
 
