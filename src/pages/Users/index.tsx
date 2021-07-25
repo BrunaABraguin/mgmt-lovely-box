@@ -55,42 +55,54 @@ export const Users = () => {
             <Navbar />
             <S.Row>
                 <form onSubmit={addUser}>
-                    <label htmlFor="username">Username</label>
-                    <input
-                    type="text" 
-                    id="username" 
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}/>
+                    <S.FormFields>                        
+                        <label htmlFor="username">Nome de usuário</label>
+                        <input
+                        type="text" 
+                        id="username" 
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}/>
+                    </S.FormFields>
 
-                    <label htmlFor="firstname">Nome</label>
-                    <input 
-                    type="text" 
-                    id="firstname" 
-                    value={firstname}
-                    onChange={(e) => setFirstname(e.target.value)}/>
+                    <S.FormFields>
+                        <label htmlFor="firstname">Nome</label>
+                        <input 
+                        type="text" 
+                        id="firstname" 
+                        value={firstname}
+                        onChange={(e) => setFirstname(e.target.value)}/>
+                    </S.FormFields>
+                    
+                    <S.FormFields>
+                        <label htmlFor="lastname">Sobrenome</label>
+                        <input 
+                        type="text" 
+                        id="lastname" 
+                        value={lastname}
+                        onChange={(e) => setLastname(e.target.value)}/>
+                    </S.FormFields>
 
-                    <label htmlFor="lastname">Sobrenome</label>
-                    <input 
-                    type="text" 
-                    id="lastname" 
-                    value={lastname}
-                    onChange={(e) => setLastname(e.target.value)}/>
+                    <S.FormFields>
+                        <label htmlFor="email">E-mail</label>
+                        <input 
+                        type="email" 
+                        id="email" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}/>
+                    </S.FormFields>
 
-                    <label htmlFor="email">E-mail</label>
-                    <input 
-                    type="email" 
-                    id="email" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}/>
+                    <S.FormFields>
+                        <label htmlFor="phone">Telefone</label>
+                        <input 
+                        type="phone" 
+                        id="phone"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}/>
+                    </S.FormFields>
 
-                    <label htmlFor="phone">Telefone</label>
-                    <input 
-                    type="phone" 
-                    id="phone"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}/>
-
-                    <button type="submit">Salvar</button>
+                    <S.SubmitButton>
+                        <button type="submit">Salvar</button>
+                    </S.SubmitButton>
                 </form>   
                 <table>
                     <thead>

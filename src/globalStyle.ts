@@ -42,4 +42,36 @@ export default createGlobalStyle`
     .text-capitalize {        
         text-transform: capitalize;
     }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin: 50px 80px;
+
+        label {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        input, select  {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            font-size: 1rem;
+            padding: 10px 20px;
+            background-color: transparent;
+            outline: none;
+        }
+
+        button{
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: 0;
+            background: blueviolet;
+            color: white;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+    }
 ` 

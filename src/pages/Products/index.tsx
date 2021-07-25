@@ -44,35 +44,43 @@ export const Products = () => {
             <Navbar />
             <S.Row>
                 <form onSubmit={addProduct}>
-                    <label htmlFor="title">Título</label>
-                    <input
-                    id="title"
-                    type="text" 
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    />
+                    <S.FormFields>                            
+                        <label htmlFor="title">Título</label>
+                        <input
+                        id="title"
+                        type="text" 
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        />
+                    </S.FormFields>
+                    
+                    <S.FormFields>
+                        <label htmlFor="price">Preço</label>
+                        <input
+                        id="price"
+                        type="number" 
+                        value={price}
+                        onChange={(e) => setPrice(e.target.value)}/>
+                    </S.FormFields>
 
-                    <label htmlFor="price">Preço</label>
-                    <input
-                    id="price"
-                    type="number" 
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}/>
-
-                    <label htmlFor="category">Categoria</label>
-                    <select
-                    name="category" 
-                    id="category"
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
-                    >  
-                        <option value="men's clothing">Men's Clothing</option>
-                        <option value="jewelery">Jewelery</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="women's clothing">Women's Clothing</option>
-                    </select>
-
-                    <button type="submit">Salvar</button>
+                    <S.FormFields>
+                        <label htmlFor="category">Categoria</label>
+                        <select
+                        name="category" 
+                        id="category"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                        >  
+                            <option value="men's clothing">Men's Clothing</option>
+                            <option value="jewelery">Jewelery</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="women's clothing">Women's Clothing</option>
+                        </select>
+                    </S.FormFields>
+                    
+                    <S.SubmitButton>
+                        <button type="submit">Salvar</button>
+                    </S.SubmitButton>
                 </form>
                 <table>
                     <thead>
