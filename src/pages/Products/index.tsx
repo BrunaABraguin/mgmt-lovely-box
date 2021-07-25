@@ -16,7 +16,7 @@ export const Products = () => {
     const [price, setPrice] = useState<string>('');
     const [category, setCategory] = useState<string>("men's clothing");
 
-    useEffect(() => { 
+    useEffect(() => {
         axios.get('http://localhost:8080/products')
         .then(response => {
             setProducts(response.data);
@@ -32,6 +32,12 @@ export const Products = () => {
             price: price,
             category: category,
         }));
+
+        axios.post('http://localhost:8080/products', {
+            title: title,
+            price: price,
+            category: category,
+        });
     } 
     return (
         <S.Container>
@@ -78,7 +84,7 @@ export const Products = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {products.map(product => (
+                        {products.map(product => (                         
                             <tr key={product.id}>
                                 <td>{product.id}</td>
                                 <td>{product.title}</td>

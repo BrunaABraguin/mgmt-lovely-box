@@ -40,6 +40,14 @@ export const Users = () => {
             email: email,
             phone: phone
         }));
+
+        axios.post('http://localhost:8080/users', {
+            username: username,
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            phone: phone
+        })
     };
 
     return (
