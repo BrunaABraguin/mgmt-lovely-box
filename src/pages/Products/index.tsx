@@ -38,6 +38,8 @@ export const Products = () => {
             price: price,
             category: category,
         });
+
+        localStorage.clear();
     } 
     return (
         <S.Container>

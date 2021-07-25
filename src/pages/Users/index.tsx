@@ -35,19 +35,24 @@ export const Users = () => {
     const addUser = () => {
         localStorage.setItem('user', JSON.stringify({
             username: username,
-            firstname: firstname,
-            lastname: lastname,
+            name: {
+                firstname: firstname,
+                lastname: lastname,
+            },
             email: email,
             phone: phone
         }));
 
         axios.post('http://localhost:8080/users', {
             username: username,
-            firstname: firstname,
-            lastname: lastname,
+            name: {
+                firstname: firstname,
+                lastname: lastname,
+            },
             email: email,
             phone: phone
-        })
+        });
+        localStorage.clear();
     };
 
     return (
@@ -117,7 +122,7 @@ export const Users = () => {
                         {users.map(user => (
                             <tr key={user.id}>
                                 <td>{user.username}</td>
-                                <td className="text-capitalize">{user.name.firstname} {user.name.lastname}</td>
+                                <td className="text-capitalize">{user.name?.firstname} {user.name?.lastname}</td>
                                 <td>{user.email}</td>
                                 <td>{user.phone}</td>
                             </tr>
