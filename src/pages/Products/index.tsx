@@ -26,14 +26,26 @@ export const Products = () => {
         <S.Container>
             <Navbar />
             <S.Row>
-            { products.map((product, index) => (  
-                <div key={index}>
-                    <h1>{ product.id }</h1>       
-                    <h1>{ product.title }</h1>
-                    <p>{ product.price }</p>
-                    <p>{ product.category }</p>
-                </div>
-            ))}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Preço</th>
+                            <th>Categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {products.map(product => (
+                            <tr key={product.id}>
+                                <td>{product.id}</td>
+                                <td>{product.title}</td>
+                                <td>R$ {product.price}</td>
+                                <td>{product.category}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </S.Row>
         </S.Container>
     )

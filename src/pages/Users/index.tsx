@@ -30,15 +30,26 @@ export const Users = () => {
         <S.Container>
             <Navbar />       
             <S.Row>
-                {users.map((user, index) => (
-                    <div key={index}>
-                    <h1>{ user.id }</h1>       
-                    <h1>{ user.username }</h1>
-                    <p>{ user.name.firstname } { user.name.lastname }</p>
-                    <p>{ user.email }</p>
-                    <p>{ user.phone }</p>
-                </div>
-            ))}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map(user => (
+                            <tr key={user.id}>
+                                <td>{user.username}</td>
+                                <td className="text-capitalize">{user.name.firstname} {user.name.lastname}</td>
+                                <td>{user.email}</td>
+                                <td>{user.phone}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </S.Row>
         </S.Container>
     )

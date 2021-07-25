@@ -5,6 +5,6 @@ export const Container = styled.section`
 `;
 
 export const Row = styled.section`
-    margin-left: 15%;
+     margin: 0 auto;
     flex-direction: row;
 `;

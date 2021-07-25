@@ -23,4 +23,23 @@ export default createGlobalStyle`
     a {
         text-decoration: none;
     }
-`
+
+    td{
+        max-width: 25rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding: 10px 50px;                                        
+        border-bottom: 1px solid #ccc;
+    }
+
+    th{
+        text-align: center;
+        padding: 20px 50px;
+        border-bottom: 0.25px solid #ccc;  
+    }
+
+    .text-capitalize {        
+        text-transform: capitalize;
+    }
+` 
