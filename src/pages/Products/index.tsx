@@ -12,6 +12,10 @@ interface Product {
 
 export const Products = () => {
     const [products, setProducts] = useState<Product[]>([]);
+    const [title, setTitle] = useState<string>('');
+    const [price, setPrice] = useState<string>('');
+    const [category, setCategory] = useState<string>("men's clothing");
+
     useEffect(() => { 
         axios.get('http://localhost:8080/products')
         .then(response => {
@@ -21,11 +25,49 @@ export const Products = () => {
             console.log(error);
         });
     }, []);
-
+    
+    const addProduct = () => {
+        localStorage.setItem('product', JSON.stringify({
+            title: title,
+            price: price,
+            category: category,
+        }));
+    } 
     return (
         <S.Container>
             <Navbar />
             <S.Row>
+                <form onSubmit={addProduct}>
+                    <label htmlFor="title">Título</label>
+                    <input
+                    id="title"
+                    type="text" 
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    />
+
+                    <label htmlFor="price">Preço</label>
+                    <input
+                    id="price"
+                    type="number" 
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}/>
+
+                    <label htmlFor="category">Categoria</label>
+                    <select
+                    name="category" 
+                    id="category"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    >  
+                        <option value="men's clothing">Men's Clothing</option>
+                        <option value="jewelery">Jewelery</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="women's clothing">Women's Clothing</option>
+                    </select>
+
+                    <button type="submit">Salvar</button>
+                </form>
                 <table>
                     <thead>
                         <tr>
@@ -41,7 +83,7 @@ export const Products = () => {
                                 <td>{product.id}</td>
                                 <td>{product.title}</td>
                                 <td>R$ {product.price}</td>
-                                <td>{product.category}</td>
+                                <td className="text-capitalize">{product.category}</td>
                             </tr>
                         ))}
                     </tbody>

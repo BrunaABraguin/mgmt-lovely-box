@@ -16,6 +16,12 @@ interface User {
 
 export const Users = () => {
     const [users, setUsers] = useState<User[]>([]);
+    const [username, setUsername] = useState<string>("");
+    const [firstname, setFirstname] = useState<string>("");
+    const [lastname, setLastname] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [phone, setPhone] = useState<string>("");
+
     useEffect(() => {
         axios.get('http://localhost:8080/users')
         .then(response => {
@@ -26,10 +32,58 @@ export const Users = () => {
         });
     }, []);
 
+    const addUser = () => {
+        localStorage.setItem('user', JSON.stringify({
+            username: username,
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            phone: phone
+        }));
+    };
+
     return (
         <S.Container>
-            <Navbar />       
+            <Navbar />
             <S.Row>
+                <form onSubmit={addUser}>
+                    <label htmlFor="username">Username</label>
+                    <input
+                    type="text" 
+                    id="username" 
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}/>
+
+                    <label htmlFor="firstname">Nome</label>
+                    <input 
+                    type="text" 
+                    id="firstname" 
+                    value={firstname}
+                    onChange={(e) => setFirstname(e.target.value)}/>
+
+                    <label htmlFor="lastname">Sobrenome</label>
+                    <input 
+                    type="text" 
+                    id="lastname" 
+                    value={lastname}
+                    onChange={(e) => setLastname(e.target.value)}/>
+
+                    <label htmlFor="email">E-mail</label>
+                    <input 
+                    type="email" 
+                    id="email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}/>
+
+                    <label htmlFor="phone">Telefone</label>
+                    <input 
+                    type="phone" 
+                    id="phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}/>
+
+                    <button type="submit">Salvar</button>
+                </form>   
                 <table>
                     <thead>
                         <tr>
